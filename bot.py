@@ -11,7 +11,9 @@ from telegram.ext import (
     ContextTypes,
 )
 
-TOKEN = "8445260599:AAHmIkXc3VFMCPHyzp9QW2pK2NNe0KDKoKE"
+TOKEN = os.getenv("TOKEN")
+if not TOKEN:
+    raise RuntimeError("TOKEN environment variable is required. Set it before starting the bot.")
 DATA_FILE = "users.json"
 
 
